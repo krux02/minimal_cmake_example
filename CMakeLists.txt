@@ -6,7 +6,7 @@ project(example_project)
 ###############################################################################
 
 # thise instructions search the directory tree when cmake is
-# invoked and put all files that math the pattern in the variables 
+# invoked and put all files that match the pattern in the variables 
 # `sources` and `data`
 file(GLOB_RECURSE sources      src/main/*.cpp src/main/*.h)
 file(GLOB_RECURSE sources_test src/test/*.cpp)
@@ -28,7 +28,7 @@ target_compile_options(example PUBLIC -std=c++1y -Wall -Wfloat-conversion)
 target_include_directories(example PUBLIC src/main)
 
 # this copies all resource files in the build directory
-# we need this, because we want to work with paths relative to the executabl
+# we need this, because we want to work with paths relative to the executable
 file(COPY ${data} DESTINATION resources)
 
 ###############################################################################
@@ -60,8 +60,9 @@ if(GTEST_FOUND)
   # testing target
   target_compile_definitions(unit_tests PUBLIC UNIT_TESTS)
 
-  # this allows us to use our executable as a link library
+  # this allows us to use the executable as a link library
   # therefore we can inherit all compiler options and library dependencies
+  # by adding example
   set_target_properties(example PROPERTIES ENABLE_EXPORTS on)
 
   target_link_libraries(unit_tests PUBLIC
@@ -72,7 +73,7 @@ if(GTEST_FOUND)
   target_include_directories(unit_tests PUBLIC
     ${GTEST_INCLUDE_DIRS} # doesn't do anything on linux
   )
-  # by adding example
+  
 endif()
 
 ###############################################################################
