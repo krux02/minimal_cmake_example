@@ -10,6 +10,6 @@ on the source code get a harder job. Also I disagree that every source folder sh
 is no really good reason do do it otherwise, one CMake file should be enough for the entire project. In one file you should be able 
 to see everything that is important to build all parts of the project. This information should not be scattered around in different source folders.
 
-# build failed because of boost
+## build can fail because of boost
 
-The build of this project might fail, when the build does not find boost. This does not mean that there is an error in the CMakeLists.txt file, it just means, that CMake could not find boost in your system, and therefore the fails is intentional. You can simply remove the boost dependency, if you don't want it, or tell CMake where to find it with ccmake or cmake-gui. It's just there to serve as an example.
+The build of this project might fail, when CMake does not find boost. This does not mean that there is an error in the CMakeLists.txt file, it just means, that CMake could not find boost in your system. You can simply remove the boost dependency, if you don't want or need it. Or you could tell CMake where to find boost with ccmake or cmake-gui. It's just there to serve as an example, how you could declare dependencies that you do not distribute with your project.
