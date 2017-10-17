@@ -1,4 +1,4 @@
-# Minimal_CMake_Example
+# Minimal CMake Example
 This project tries to be a minimal cmake example. It covers sources,
 resources, dependencies and packaging.
 
