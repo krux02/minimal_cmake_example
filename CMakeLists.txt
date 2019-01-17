@@ -70,6 +70,7 @@ if(GTEST_FOUND)
   target_link_libraries(unit_tests PUBLIC
     ${GTEST_BOTH_LIBRARIES}
     example
+    -lpthread
   )
 
   target_include_directories(unit_tests PUBLIC
